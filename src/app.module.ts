@@ -1,9 +1,14 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { HttpModule } from '@nestjs/axios'; 
+import {PokemonModule} from './pkmn-data/pkmn-data.module';
 
 @Module({
-  imports: [],
+  imports: [
+    HttpModule,
+    PokemonModule
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
